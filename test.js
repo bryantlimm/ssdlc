@@ -25,11 +25,11 @@ describe('validatePassword', () => {
 
 // --- Intentional Break Test (Fails on Purpose) ---
 
-describe('Intentional Fail Test', () => {
-    // 5. Intentional Break Test (Fails on Purpose)
-    test('should fail because the expected outcome is intentionally wrong', () => {
-        // We know 'StrongP@ss123' is a valid password (returns true), but we expect it to be false.
-        // This forces a test failure, thus failing the CI workflow.
-        expect(validatePassword('StrongP@ss123')).toBe(false); // <--- This line causes the intentional failure!
-    });
-});
+// describe('Intentional Fail Test', () => {
+//     // 5. Intentional Break Test (Fails on Purpose)
+//     test('should fail because the expected outcome is intentionally wrong', () => {
+//         // We know 'StrongP@ss123' is a valid password (returns true), but we expect it to be false.
+//         // This forces a test failure, thus failing the CI workflow.
+//         expect(validatePassword('StrongP@ss123')).toBe(false); // <--- This line causes the intentional failure!
+//     });
+// });
