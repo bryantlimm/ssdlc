@@ -1,0 +1,35 @@
+# ci-windows.yml
+# This file defines the CI workflow that runs your tests.
+
+name: Node.js CI (Windows)
+
+on:
+  push:
+    branches: [ "main" ] # Runs on every push to the main branch
+
+jobs:
+  build:
+    # Requirement: Using a Windows Runner
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x] # Use a stable Node.js version
+
+    steps:
+    - uses: actions/checkout@v4
+      name: Checkout code
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm' # Speeds up dependency install
+
+    - name: Install dependencies
+      run: npm install
+
+    # Requirement: Workflow runs automatically on every push
+    - name: Run unit tests
+      # This command runs the 'test' script defined in package.json
+      run: npm test

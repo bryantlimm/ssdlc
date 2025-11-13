@@ -1,0 +1,20 @@
+{
+  "name": "auth-validator-assignment",
+  "version": "1.0.0",
+  "description": "Node.js Unit Testing and CI/CD Assignment",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "nodejs",
+    "jest",
+    "github-actions"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
